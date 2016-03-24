@@ -31,8 +31,8 @@ Rails.application.configure do
   port: 587,
   domain: Rails.application.secrets.domain_name,
   authentication: "plain",
-  user_name: Rails.application.secrets.email_provider_username,
-  password: Rails.application.secrets.email_provider_password
+  user_name: ENV["SENDGRID_USERNAME"],
+  password: ENV["SENDGRID_PASSWORD"]
 }
 # ActionMailer Config
 config.action_mailer.default_url_options = { :host => 'localhost:3000' }
